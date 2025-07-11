@@ -72,7 +72,8 @@ async function openDoc(docId) {
     ws = null;
   }
 
-  ws = new WebSocket(`ws://${location.host}/ws/${docId}`);
+  let protocol = window.location.protocol === "https:" ? "wss" : "ws";
+  ws = new WebSocket(`${protocol}://${location.host}/ws/${docId}`);
 
   ws.onopen = () => console.log("✅ WebSocket opened for docId=", docId);
   ws.onclose = () => console.log("❌ WebSocket closed for docId=", docId);
