@@ -6,10 +6,13 @@ from dotenv import load_dotenv
 
 load_dotenv()
 
-# DATABASE_URL = os.getenv("DATABASE_URL")
-DATABASE_URL ="postgresql://postgres:Viney%40intern4321%40@localhost:5500/documentEditorDb"
+DATABASE_URL = os.getenv("DATABASE_URL")
 
+if not DATABASE_URL:
+    # fallback to local SQLite for dev
+    BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+    DATABASE_URL = f"sqlite:///{os.path.join(BASE_DIR, 'test.db')}"
 
 engine = create_engine(DATABASE_URL)
-SessionLocal = sessionmaker(bind=engine, autocommit = False, autoflush=False)
-Base = declarative_base() 
+SessionLocal = sessionmaker(bind=engine, autocommit=False, autoflush=False)
+Base = declarative_base()
