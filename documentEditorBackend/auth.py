@@ -1,7 +1,7 @@
 from fastapi import APIRouter, Depends, HTTPException
 from sqlalchemy.orm import Session
-from .database import SessionLocal
-from .models import User
+from database import SessionLocal
+from models import User
 from passlib.hash import bcrypt
 from jose import jwt
 
