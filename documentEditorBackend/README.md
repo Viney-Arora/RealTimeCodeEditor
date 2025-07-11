@@ -20,15 +20,15 @@ A lightweight web application built with **FastAPI** that allows multiple users 
 ---
 
 ## 🚀 Live demo
-*To deploy, follow the steps below (Heroku, Render, Railway, etc.)*
-
+*To Check, follow the this link below (Railway)*
+https://realtimecodeeditor-production.up.railway.app/
 ---
 
 ## 🛠️ Local setup
 
 ### 1️⃣ Clone & install
 ```bash
-git clone https://github.com/yourusername/yourrepo.git
+git clone https://github.com/Viney-Arora/RealTimeCodeEditor.git
 cd documentEditorBackend
 python -m venv venv
 venv\Scripts\activate  # On Windows
