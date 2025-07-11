@@ -1,0 +1,28 @@
+
+#editor { height: 300px; }
+
+/* Tooltip style */
+.ai-suggestion {
+  background-color: rgba(255, 200, 0, 0.3);
+  position: relative;
+  cursor: pointer;
+}
+
+.ai-suggestion::after {
+  content: attr(data-message);
+  position: absolute;
+  bottom: 100%; left: 50%;
+  transform: translateX(-50%);
+  background: #333; color: #fff;
+  padding: 4px 8px;
+  border-radius: 4px;
+  white-space: nowrap;
+  opacity: 0;
+  pointer-events: none;
+  font-size: 12px;
+  transition: opacity 0.2s;
+}
+
+.ai-suggestion:hover::after {
+  opacity: 1;
+}
