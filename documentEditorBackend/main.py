@@ -1,10 +1,10 @@
 from fastapi import FastAPI, Depends, HTTPException, Header
 from fastapi.middleware.cors import CORSMiddleware
-from .database import Base, engine, SessionLocal
-from .auth import router as auth_router
-from .websocket import router as ws_router
-from .ai import router as ai_router
-from .models import Document, DocumentVersion, User
+from database import Base, engine, SessionLocal
+from auth import router as auth_router
+from websocket import router as ws_router
+from ai import router as ai_router
+from models import Document, DocumentVersion, User
 from sqlalchemy.orm import Session
 from jose import jwt, JWTError
 from pydantic import BaseModel
